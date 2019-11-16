@@ -2,13 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.reflections</groupId>
+    <groupId>org.terasology</groupId>
     <artifactId>reflections</artifactId>
     <version>0.9.12-SNAPSHOT</version>
 
     <name>Reflections</name>
     <description>Reflections - a Java runtime metadata analysis</description>
-    <url>http://github.com/ronmamo/reflections</url>
+    <url>http://github.com/MovingBlocks/reflections</url>
 
     <licenses>
         <license>
@@ -22,27 +22,14 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/ronmamo/reflections/issues</url>
-        <connection>scm:git:git://github.com/ronmamo/reflections.git</connection>
+        <url>https://github.com/MovingBlocks/reflections/issues</url>
+        <connection>scm:git:git://github.com/MovingBlocks/reflections.git</connection>
     </scm>
 
     <issueManagement>
-        <url>https://github.com/ronmamo/reflections/issues</url>
+        <url>https://github.com/MovingBlocks/reflections/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
-
-    <mailingLists>
-        <mailingList>
-            <name>google-code-reflections</name>
-            <archive>http://groups.google.com/group/google-code-reflections</archive>
-        </mailingList>
-    </mailingLists>
-
-    <developers>
-        <developer>
-            <email>ronmamo at gmail</email>
-        </developer>
-    </developers>
 
     <distributionManagement>
         <snapshotRepository>
@@ -92,22 +79,6 @@
             <artifactId>gson</artifactId>
             <version>2.8.0</version>
             <optional>true</optional> <!-- case: when no json de/serialization -->
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-            <scope>provided</scope>
-            <optional>true</optional> <!-- case: when no servlet environment -->
-        </dependency>
-
-        <!-- use any implementation you like -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>1.7.24</version>
-            <optional>true</optional> <!-- case: when other logging implementation used or logging is not needed -->
         </dependency>
 
         <dependency>

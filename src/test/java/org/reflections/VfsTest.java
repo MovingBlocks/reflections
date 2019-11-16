@@ -15,6 +15,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.jar.JarFile;
+import java.util.regex.Pattern;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -134,6 +135,7 @@ public class VfsTest {
         String tmpFolder = System.getProperty("java.io.tmpdir");
 		tmpFolder = tmpFolder.endsWith(File.separator) ? tmpFolder : tmpFolder + File.separator;
         String dirWithJarInName = tmpFolder + "tony.jarvis";
+        dirWithJarInName = dirWithJarInName.replaceAll(Pattern.quote("\\"), "/");
         File newDir = new File(dirWithJarInName);
         newDir.mkdir();
 
@@ -157,6 +159,9 @@ public class VfsTest {
         int start = directoryInJarPath.indexOf(":") + 1;
 		int end = directoryInJarPath.indexOf(".jar!") + 4;
 		String expectedJarFile = directoryInJarPath.substring(start, end);
+		expectedJarFile = expectedJarFile.replaceAll("/", "\\\\");
+		expectedJarFile = expectedJarFile.replaceAll("%20", " ");
+		expectedJarFile = expectedJarFile.substring(1);
         
         Vfs.Dir dir = Vfs.fromURL(new URL(directoryInJarPath));
 
